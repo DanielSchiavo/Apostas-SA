@@ -5,11 +5,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-import br.com.danielschiavo.dominio.usuario.aposta.Aposta;
-import br.com.danielschiavo.dominio.usuario.transacao.Transacao;
+import br.com.danielschiavo.dominio.aposta.Aposta;
+import br.com.danielschiavo.dominio.transacao.Transacao;
 
 public class Usuario {
+	
+	private UUID id;
 	
 	private CPF cpf;
 	
@@ -31,26 +34,55 @@ public class Usuario {
 	
 	private BigDecimal saldo;
 	
+	private String instagram;
+	
+	private String facebook;
+	
+	private String twitter;
+	
+	private String frase;
+	
 	private List<Aposta> apostas = new ArrayList<>();
 	
 	private List<Transacao> transacoes = new ArrayList<>();
+	
+	private List<Jogador> jogador;
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
 
 	public Usuario(CPF cpf, String nome, String sobrenome, Email email, Telefone telefone, String senha, String foto,
-			LocalDate dataNascimento, LocalDateTime dataCriacaoConta, BigDecimal saldo, List<Aposta> apostas,
-			List<Transacao> transacoes) {
+			LocalDate dataNascimento, LocalDateTime dataCriacaoConta, BigDecimal saldo) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
-		this.setTelefone(telefone);
+		this.telefone = telefone;
 		this.senha = senha;
 		this.foto = foto;
 		this.dataNascimento = dataNascimento;
 		this.dataCriacaoConta = dataCriacaoConta;
 		this.saldo = saldo;
-		this.apostas = apostas;
-		this.transacoes = transacoes;
+	}
+	
+	public Usuario(CPF cpf, String nome, String sobrenome, Email email, Telefone telefone, String foto,
+			LocalDate dataNascimento, LocalDateTime dataCriacaoConta, BigDecimal saldo) {
+		super();
+		this.cpf = cpf;
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.telefone = telefone;
+		this.foto = foto;
+		this.dataNascimento = dataNascimento;
+		this.dataCriacaoConta = dataCriacaoConta;
+		this.saldo = saldo;
 	}
 
 	public String getCpf() {
@@ -140,6 +172,13 @@ public class Usuario {
 	public void setTransacoes(List<Transacao> transacoes) {
 		this.transacoes = transacoes;
 	}
-	
-	
+
+	public List<Jogador> getJogador() {
+		return jogador;
+	}
+
+	public void setJogador(List<Jogador> jogador) {
+		this.jogador = jogador;
+	}
+
 }

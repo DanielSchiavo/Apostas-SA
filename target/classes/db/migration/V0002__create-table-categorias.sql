@@ -1,0 +1,6 @@
+CREATE TABLE categorias (
+	id CHAR(16),
+	nome VARCHAR(50) NOT NULL,
+	imagem VARCHAR(100) NOT NULL,
+	PRIMARY KEY (id)
+);

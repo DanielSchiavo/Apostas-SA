@@ -16,7 +16,7 @@ public class Telefone {
 			throw new ValidacaoException("DDD invalido!");
 		}
 		
-		if (!numero.matches("\\d{8}|\\d{9}")) {
+		if (!numero.matches("\\d{9}")) {
 			throw new ValidacaoException("Numero invalido!");
 		}
 		this.ddd = ddd;

@@ -1,6 +1,6 @@
 package br.com.danielschiavo.dominio.evento.estatisticas.lol;
 
-import br.com.danielschiavo.dominio.evento.equipe.Jogador;
+import br.com.danielschiavo.dominio.usuario.Jogador;
 
 public class CampeaoEscolhido {
 
