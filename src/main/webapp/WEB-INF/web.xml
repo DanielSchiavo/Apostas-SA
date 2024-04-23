@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+	<display-name>aposta</display-name>
+		<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<filter>
+		<filter-name>AutenticacaoFilter</filter-name>
+		<filter-class>br.com.danielschiavo.infra.security.AutenticacaoFilter</filter-class>
+	</filter>	
+	<filter>
+		<filter-name>MonitoramentoFilter</filter-name>
+		<filter-class>br.com.danielschiavo.infra.security.MonitoramentoFilter</filter-class>
+	</filter>
+	
+	
+	<!-- USUARIO -->
+	<servlet>
+		<servlet-name>AutenticarUsuarioServlet</servlet-name>
+		<servlet-class>br.com.danielschiavo.infra.usuario.servlet.AutenticarUsuarioServlet</servlet-class>
+	</servlet>
+    <servlet-mapping>
+        <servlet-name>AutenticarUsuarioServlet</servlet-name>
+        <url-pattern>/usuario/autenticar</url-pattern>
+    </servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CadastrarUsuarioServlet</servlet-name>
+		<servlet-class>br.com.danielschiavo.infra.usuario.servlet.CadastrarUsuarioServlet</servlet-class>
+	</servlet>
+    <servlet-mapping>
+        <servlet-name>CadastrarUsuarioServlet</servlet-name>
+        <url-pattern>/usuario/cadastro</url-pattern>
+    </servlet-mapping>
+    
+	<servlet>
+		<servlet-name>DadosPessoaisServlet</servlet-name>
+		<servlet-class>br.com.danielschiavo.infra.usuario.servlet.DadosPessoaisServlet</servlet-class>
+	</servlet>
+    <servlet-mapping>
+        <servlet-name>DadosPessoaisServlet</servlet-name>
+        <url-pattern>/usuario/dados-pessoais</url-pattern>
+    </servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PaginaInicialServlet</servlet-name>
+		<servlet-class>br.com.danielschiavo.infra.usuario.servlet.PaginaInicialServlet</servlet-class>
+	</servlet>
+    <servlet-mapping>
+        <servlet-name>PaginaInicialServlet</servlet-name>
+        <url-pattern>/usuario/pagina-inicial</url-pattern>
+    </servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PerfilJogadorServlet</servlet-name>
+		<servlet-class>br.com.danielschiavo.infra.usuario.servlet.PerfilJogadorServlet</servlet-class>
+	</servlet>
+    <servlet-mapping>
+        <servlet-name>PerfilJogadorServlet</servlet-name>
+        <url-pattern>/usuario/perfil-jogador</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+		<servlet-name>AlterarSenhaServlet</servlet-name>
+		<servlet-class>br.com.danielschiavo.infra.usuario.servlet.AlterarSenhaServlet</servlet-class>
+	</servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarSenhaServlet</servlet-name>
+        <url-pattern>/usuario/alterar-senha</url-pattern>
+    </servlet-mapping>
+	
+</web-app>

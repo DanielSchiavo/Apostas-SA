@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.danielschiavo</groupId>
+  <artifactId>Aposta</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.7.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>5.1.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>10.11.0</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-database-postgresql</artifactId>
+			<version>10.11.0</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/at.favre.lib/bcrypt -->
+		<dependency>
+			<groupId>at.favre.lib</groupId>
+			<artifactId>bcrypt</artifactId>
+			<version>0.10.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.32</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.5.5.Final</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.17.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.17.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.4.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+		<dependency>
+		    <groupId>jakarta.validation</groupId>
+		    <artifactId>jakarta.validation-api</artifactId>
+		    <version>3.0.2</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<dependency>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>8.0.1.Final</version>
+		</dependency>
+
+
+
+	</dependencies>
+  	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<release>11</release>
+					<annotationProcessorPaths>
+			            <path>
+			                <groupId>org.mapstruct</groupId>
+			                <artifactId>mapstruct-processor</artifactId>
+			                <version>1.4.2.Final</version>
+			            </path>
+			        </annotationProcessorPaths>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
