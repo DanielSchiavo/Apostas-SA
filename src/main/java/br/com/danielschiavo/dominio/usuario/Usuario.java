@@ -5,7 +5,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -75,6 +77,10 @@ public class Usuario {
     @Setter(value = AccessLevel.NONE)
 	private List<PerfilJogo> perfisJogos = new ArrayList<>();
 	
+    @Getter(value = AccessLevel.NONE)
+    @Setter(value = AccessLevel.NONE)
+	private Set<Role> roles = new HashSet<>();
+	
 	public String getCpf() {
 		return cpf.getNumero();
 	}
@@ -114,6 +120,18 @@ public class Usuario {
 		this.perfisJogos.add(perfilJogo);
 	}
 
+	public Set<Role> getRoles() {
+		return Collections.unmodifiableSet(this.roles);
+	}
+
+	public void adicionarRole(Role role) {
+		this.roles.add(role);
+	}
+	
+	public void removerRole(Role role) {
+		this.roles.remove(role);
+	}
+	
 	
 	public static UsuarioBuilder builder(GeradorUUID geradorUuid) {
 		return new UsuarioBuilder(geradorUuid);
@@ -214,6 +232,11 @@ public class Usuario {
 			return this;
 		}
 		
+		public UsuarioBuilder adicionarRole(Role role) {
+			this.usuario.adicionarRole(role);
+			return this;
+		}
+		
 		public Usuario build() throws ValidacaoException {
 			if (this.usuario != null) {
 				Usuario copiaUsuario = new Usuario();
@@ -238,6 +261,9 @@ public class Usuario {
 				copiaUsuario.setSaldo(this.usuario.getSaldo());
 				copiaUsuario.setConfirmouIdentidade(this.usuario.getConfirmouIdentidade());
 				copiaUsuario.setPerfilJogador(this.usuario.getPerfilJogador());
+				if (this.usuario.roles.size() > 0) {
+					this.usuario.roles.forEach(role -> copiaUsuario.adicionarRole(role));
+				}
 				this.usuario = null;
 				return copiaUsuario;
 			}

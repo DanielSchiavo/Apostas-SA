@@ -11,9 +11,13 @@
 	</welcome-file-list>
 
 	<filter>
-		<filter-name>AutenticacaoFilter</filter-name>
-		<filter-class>br.com.danielschiavo.infra.security.AutenticacaoFilter</filter-class>
-	</filter>	
+		<filter-name>AutenticacaoUserFilter</filter-name>
+		<filter-class>br.com.danielschiavo.infra.security.AutenticacaoUserFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>AutenticacaoAdminFilter</filter-name>
+		<filter-class>br.com.danielschiavo.infra.security.AutenticacaoAdminFilter</filter-class>
+	</filter>
 	<filter>
 		<filter-name>MonitoramentoFilter</filter-name>
 		<filter-class>br.com.danielschiavo.infra.security.MonitoramentoFilter</filter-class>
@@ -73,6 +77,28 @@
     <servlet-mapping>
         <servlet-name>AlterarSenhaServlet</servlet-name>
         <url-pattern>/usuario/alterar-senha</url-pattern>
+    </servlet-mapping>
+    
+    <!-- CATEGORIA -->
+    
+    <servlet>
+		<servlet-name>CategoriaAdminServlet</servlet-name>
+		<servlet-class>br.com.danielschiavo.infra.admin.categoria.CategoriaAdminServlet</servlet-class>
+	</servlet>
+    <servlet-mapping>
+        <servlet-name>CategoriaAdminServlet</servlet-name>
+        <url-pattern>/admin/categoria/*</url-pattern>
+    </servlet-mapping>
+    
+    <!-- SUB - CATEGORIA -->
+    
+    <servlet>
+		<servlet-name>SubCategoriaAdminServlet</servlet-name>
+		<servlet-class>br.com.danielschiavo.infra.admin.categoria.subcategoria.SubCategoriaAdminServlet</servlet-class>
+	</servlet>
+    <servlet-mapping>
+        <servlet-name>SubCategoriaAdminServlet</servlet-name>
+        <url-pattern>/admin/sub-categoria/*</url-pattern>
     </servlet-mapping>
 	
 </web-app>

@@ -9,7 +9,18 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
 
-@WebFilter(servletNames = {"DadosPessoaisServlet", "PaginaInicialServlet", "PerfilJogadorServlet"})
+@WebFilter(servletNames = {
+						//USUARIO
+						"AlterarSenhaServlet",
+						"DadosPessoaisServlet", 
+						"PaginaInicialServlet", 
+						"PerfilJogadorServlet",
+						
+						//CATEGORIA
+						"CategoriaServlet",
+						
+						//SUB - CATEGORIA
+						"SubCategoriaServlet"})
 public class MonitoramentoFilter implements Filter {
 
 	@Override

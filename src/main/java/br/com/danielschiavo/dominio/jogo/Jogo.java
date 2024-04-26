@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-import br.com.danielschiavo.dominio.categoria.SubCategoria;
+import br.com.danielschiavo.dominio.categoria.subcategoria.SubCategoria;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

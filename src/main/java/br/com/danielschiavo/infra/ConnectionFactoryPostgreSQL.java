@@ -27,6 +27,7 @@ public class ConnectionFactoryPostgreSQL {
 		hikariConfig.setMinimumIdle(1);
 		hikariConfig.setIdleTimeout(10000);
 		hikariConfig.setConnectionTimeout(30000);
+		hikariConfig.setAutoCommit(false);
 		
 		dataSource = new HikariDataSource(hikariConfig);
     }
