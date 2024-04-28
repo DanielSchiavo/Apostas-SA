@@ -1,0 +1,12 @@
+[submodule "apostas-sa-config-comuns"]
+	path = apostas-sa-config-comuns
+	url = git@github.com:DanielSchiavo/apostas-sa-config-comuns.git
+[submodule "apostas-sa-dominio"]
+	path = apostas-sa-dominio
+	url = git@github.com:DanielSchiavo/apostas-sa-dominio.git
+[submodule "apostas-sa-user"]
+	path = apostas-sa-user
+	url = git@github.com:DanielSchiavo/apostas-sa-user.git
+[submodule "apostas-sa-admin"]
+	path = apostas-sa-admin
+	url = git@github.com:DanielSchiavo/apostas-sa-admin.git

@@ -1,5 +1,0 @@
-CREATE TABLE moedas (
-	id CHAR(5),
-	nome VARCHAR(100) NOT NULL,
-	PRIMARY KEY(id)
-);

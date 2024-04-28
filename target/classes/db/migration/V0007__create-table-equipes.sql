@@ -1,7 +1,0 @@
-CREATE TABLE equipes (
-	id CHAR(36),
-	sigla VARCHAR(5) NOT NULL,
-	nome VARCHAR(50) NOT NULL,
-	imagem VARCHAR(100) NOT NULL,
-	PRIMARY KEY(id)
-);

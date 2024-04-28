@@ -1,8 +1,0 @@
-database:
-  url: jdbc:postgresql://localhost:5432/apostas
-  username: postgres
-  password: postgres
-  driver: org.postgresql.Driver
-
-flyway:
-  locations: classpath:db/migration
