@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apostas-sa-admin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apostas-sa-config-comuns" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apostas-sa-dominio" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apostas-sa-user" vcs="Git" />
   </component>
 </project>
